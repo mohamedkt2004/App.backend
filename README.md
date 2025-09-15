@@ -23,28 +23,45 @@ Cloner le dépôt
 
 
 bash
-git clone https://github.com/votre-utilisateur/votre-repo.git  # Remplacez par l'URL de votre repo GitHub
-cd wire-length-backend
-bash
+git clone https://github.com/@mohamedkt2004/App.backend.git     # Remplacez par l'URL de votre repo GitHub
+
+cd App.backend
+
 Configurer les dépendances
+
 Assurez-vous que pom.xml inclut OpenCV :
+
 xml<dependency>
     <groupId>org.openpencv</groupId>
     <artifactId>opencv</artifactId>
     <version>4.9.0-0</version>
 </dependency>
+
+
 Téléchargez les dépendances avec Maven :
-bashmvn clean install
-Configurer OpenCV
+
+ mvn clean install
+ 
+ Configurer OpenCV
 
 Téléchargez la bibliothèque native OpenCV depuis opencv.org.
-Placez le fichier natif (libopencv_java490.so pour Linux/macOS ou opencv_java490.dll pour Windows) dans un dossier lib/.
-Configurez -Djava.library.path=/chemin/vers/lib dans votre environnement ou IDE.
+
+Placez le fichier natif (libopencv_java490.so pour Linux/macOS ou opencv_java490.dll pour Windows) 
+dans un dossier lib/.Configurez -Djava.library.path=/chemin/vers/lib dans votre environnement ou IDE.
+
 Assurez-vous que WirelengthApplication.java charge la bibliothèque :
+
+
 
 javastatic {
     System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 }
+
+
 Lancer le serveur
-bashmvn spring-boot:run
+
+
+mvn spring-boot:run
+
+
 Le serveur sera accessible sur http://localhost:8080.
