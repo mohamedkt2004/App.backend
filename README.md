@@ -1,4 +1,4 @@
-# 📡 FiberMeter Backend
+# 📡  
 
 Le backend est une application **Spring Boot** qui fournit une **API REST** pour :
 * l'analyse d'images de rouleaux de fil,
