@@ -69,6 +69,7 @@ mvn clean install
 ## 🚀 Lancer le serveur
 
 ```bash
+cd Wirelength
 mvn spring-boot:run
 ```
 
