@@ -26,9 +26,55 @@ Les calibrations sont gérées **en mémoire** (non persistantes) avec une calib
 
 ---
 
+
 ## ⚙️ Installation
 
 ### 1️⃣ Cloner le dépôt
 ```bash
 git clone https://github.com/mohamedkt2004/App.backend.git
 cd App.backend
+
+
+2️⃣ Configurer les dépendances
+
+Vérifiez que votre pom.xml inclut bien OpenCV :
+
+<dependency>
+    <groupId>org.openpencv</groupId>
+    <artifactId>opencv</artifactId>
+    <version>4.9.0-0</version>
+</dependency>
+
+
+Installez les dépendances avec Maven :
+
+mvn clean install
+
+🛠 Configurer OpenCV
+
+Téléchargez la bibliothèque native OpenCV 4.9.0 depuis opencv.org
+.
+
+Placez le fichier natif dans un dossier lib/ :
+
+libopencv_java490.so → Linux/macOS
+
+opencv_java490.dll → Windows
+
+Puis configurez le chemin dans votre environnement ou IDE :
+
+-Djava.library.path=/chemin/vers/lib
+
+
+Assurez-vous que WirelengthApplication.java charge bien la bibliothèque :
+
+static {
+    System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+}
+
+🚀 Lancer le serveur
+mvn spring-boot:run
+
+
+Le serveur sera accessible à l’adresse :
+👉 http://localhost:8080
