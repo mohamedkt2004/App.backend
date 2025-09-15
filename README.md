@@ -1,5 +1,10 @@
-Description :
-Le backend est une application Spring Boot qui fournit une API REST pour l'analyse d'images de rouleaux de fil et la gestion des calibrations. Il utilise OpenCV 4.9.0 pour détecter automatiquement des rectangles colorés dans les images et estimer leur longueur en pixels, puis convertir ces mesures en unités réelles (mm, cm, m) à l'aide de calibrations. Les calibrations sont gérées en mémoire (non persistant) avec une calibration par défaut initialisée au démarrage.
+Description
+Le backend est une application Spring Boot qui fournit une API REST pour l'analyse d'images de rouleaux de fil et la gestion des calibrations.
+Il utilise OpenCV 4.9.0 pour détecter automatiquement des rectangles colorés dans les images et estimer leur longueur en pixels, puis convertir 
+ces mesures en unités réelles (mm, cm, m) à l'aide de calibrations. Les calibrations sont gérées en mémoire (non persistant) avec une calibration 
+par défaut initialisée au démarrage.
+
+
 Fonctionnalités principales
 
 Analyse d'image : Détection de rectangles colorés via seuillage RGB et BFS, avec estimation de la longueur via le grand côté ou une analyse PCA.
@@ -12,13 +17,15 @@ Prérequis
 JDK 17 ou supérieur : Pour exécuter l'application Spring Boot.
 Maven : Pour gérer les dépendances.
 OpenCV 4.9.0 : Pour le traitement d'image.
-Accès Internet pour télécharger les dépendances.
 
-Installation
+Installation :
 Cloner le dépôt
 
-bashgit clone https://github.com/votre-utilisateur/votre-repo.git  # Remplacez par l'URL de votre repo GitHub
+
+bash
+git clone https://github.com/votre-utilisateur/votre-repo.git  # Remplacez par l'URL de votre repo GitHub
 cd wire-length-backend
+bash
 Configurer les dépendances
 Assurez-vous que pom.xml inclut OpenCV :
 xml<dependency>
